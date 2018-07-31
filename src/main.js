@@ -10,7 +10,6 @@ Vue.config.productionTip = false
 Vue.prototype.axios = axios;
 
 router.beforeEach((from, to, next) => {
-  console.log('to.fullpath is ' + to.fullPath);
   if(to.matched.some(r => r.meta.requireAuth)) { // 判断是不是去往需要验证的页面
         //  next();
         if(!store.state.token) { //token为空，保留跳转的路径

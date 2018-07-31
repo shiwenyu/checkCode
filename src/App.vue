@@ -1,8 +1,9 @@
 <template>
-  <div id="app">
+  <div id="app" style="width:800px;height:800px">
       <input type="text" placeholder="请输入验证码" style="vertical-align: text-bottom">
       <img :src="authImg" class="showImg" @click='changeImg'>
       <div style="width:50px;background:red" :style="{height:changeHeight}" id='testDom'></div>
+      <button @click= 'goWaterMark'>加水印</button>
       <router-view></router-view>
   </div>
 </template>
@@ -28,6 +29,11 @@ export default {
       } else {
         return 2
       }
+    },
+    goWaterMark() {
+      this.$router.push({
+        path: '/watermark'
+      })
     }
   },
   mounted() {

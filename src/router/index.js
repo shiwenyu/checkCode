@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '../components/login.vue'
 import Reposity from '../components/reposity'
+import WaterMark from '../components/addWarterMark'
 import store from '../store/index'
 import * as types from '../store/type'
 
@@ -24,6 +25,11 @@ export default new Router({
           requireAuth: true
       },
       component: Reposity
+    },
+    {
+      path: '/watermark',
+      name: 'watermark',
+      component: WaterMark
     }
   ]
 });
